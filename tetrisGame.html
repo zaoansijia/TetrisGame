@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>game_els</title>
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+    <script src="tetrisGame.js"></script>
+    <style>
+        body{
+            background-color: #656565;
+            font-size:18px;
+        }
+        table{
+            border-collapse:collapse;
+        }
+        table,tr,td{
+            border:none;
+        }
+        table tr td{
+            width:40px;
+            height: 40px;
+            background-color:#656565;
+        }
+        .container{
+            background-color: #656565;
+            overflow: hidden;
+            padding:70px;
+            text-align: center;
+        }
+        #table1 tr td{
+            border:1px solid grey;
+        }
+        #table2{
+            border:1px solid grey;
+        }
+        .cube{
+            color: #8c96a0;
+            text-shadow: 1px 1px 1px #fff;
+            border: 1px solid #dce1e6!important;
+            box-shadow: 0 1px 2px #fff inset,0 -1px 0 #a8abae inset;
+            background: -webkit-linear-gradient(top,#f2f3f7,#e4e8ec);
+        }
+        .content,#table1{
+            display: inline-block;
+        }
+        .content{
+            background-color:#656565;
+            color:#fff;
+            padding:0 20px;
+            position: relative;
+            top:-20px;
+            margin-top:20px;
+        }
+        input{
+            width:100px;
+            background-color: #fafafa;
+            border-radius: 2px;
+            margin-bottom: 10px;
+        }
+        button{
+            margin-right:4px;
+        }
+        button,.set{
+            width: 100px;
+            line-height: 30px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 5px;
+            overflow: hidden;
+            color: #8c96a0;
+            text-shadow:1px 1px 1px #fff;
+            border:1px solid #dce1e6;
+            box-shadow: 0 1px 2px #fff inset,0 -1px 0 #a8abae inset;
+            background: -webkit-linear-gradient(top,#f2f3f7,#e4e8ec);
+            background: -moz-linear-gradient(top,#f2f3f7,#e4e8ec);
+            background: linear-gradient(top,#f2f3f7,#e4e8ec);
+        }
+        .set{
+            width:200px;
+        }
+        .content span{
+            padding-left:20px;
+            font-size:20px;
+        }
+        .text{
+            color: transparent;
+            -webkit-text-stroke: 1px #fff;
+            letter-spacing: 0.04em;
+            font-size: 40px;
+            margin-bottom:20px;
+        }
+        .text span{
+            font-size: 40px;
+        }
+        .bot{
+            color:#fff;
+            text-align: center;
+            margin-top:20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div id="table1"></div>
+    <div class="content">
+        <p class="text">NEXT CUBE</p>
+        <div id="table2">
+        </div>
+        <p class="text">SCORE:<span class="score"></span></p>
+        <form>
+            <div><label>LEVEL：</label><input value="1" class="level set"></div>
+            <div><label>ROWS：</label><input value="14" class="row set"></div>
+            <div><label>CELLS：</label><input value="12" class="cell set"></div>
+            <div style="margin-top:20px;padding-left:30px;">
+                <button type="button" class="btn_draw">DRAW</button>
+                <button type="button" class="btn_start">START</button>
+                <button type="button" class="btn_pause">PAUSE</button>
+            </div>
+        </form>
+        <div class="bot">It's by @Anan <a href="https://github.com/zaoansijia">github</a>;</div>
+    </div>
+</div>
+<script>
+    jQuery(document).ready(function() {
+        TetrisGame.init();
+    });
+</script>
+</body>
+</html>
